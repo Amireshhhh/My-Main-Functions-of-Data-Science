@@ -27,3 +27,10 @@ def TFIDF(X_train, X_test, MAX_NB_WORDS=75000):
     X_test = vectorizer_x.transform(X_test).toarray()
     print("tf-idf with", str(np.array(X_train).shape[1]), "features")
     return (X_train, X_test)
+
+
+#PCA
+from sklearn.decomposition import PCA
+pca = PCA(n_components=2000)
+X_train_new = pca.fit_transform(x_train_new)
+X_test_new = pca.transform(x_test_new)
